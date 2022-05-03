@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to CSS Grid 🏁</title>
+    <!-- style tags to be lazy and keep it simple on one screen -->
+    <style>
+      .grid-container {
+        /* define the properties of the grid in the parent with displey of grid */
+        display: grid;
+        /* define the measurements of columns and rows */
+        /* fr units = fratction of the grid */
+        grid-template-columns: 1fr 2fr 3fr;
+        /* rows go vertial */
+        /* grid-template-rows: 300px auto 500px auto; */
+        /* grid gap -- space between 'cells' */
+        grid-gap: 15px;
+        background-color: indigo;
+      }
+
+      .grid-item {
+        background-color: hotpink;
+        font-size: 4rem;
+        border: 2px solid chartreuse;
+        text-align: center;
+      }
+
+      .big-item {
+        /* specifiy the points of the start and end on the grid */
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      .long-boi {
+        /* specify the start and end col to make a cell wider that one col */
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>Grids are Neat</h1>
+    <!-- display property of grid must be on parent -->
+    <div class="grid-container">
+      <div class="grid-item big-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item">8</div>
+      <div class="grid-item long-boi">9</div>
+      <div class="grid-item">10</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Grid Page Layout</title>
+    <style>
+      body {
+        /* entire body will be a grid */
+        display: grid;
+        /* 1vh = 1% of inner window height */
+        min-height: 100vh;
+        margin: 0;
+        /* specify the size of grid cols and rows */
+        grid-template-columns: 180px 100%;
+        grid-template-rows: 50px 1fr 250px;
+        /* layout the named cells with template areas */
+        grid-template-areas: "top top"
+                             "side content"
+                             "foot foot";
+      }
+
+      header {
+        /* give this a grid cell name */
+        grid-area: top;
+        background-color: blueviolet;
+      }
+
+      aside {
+        grid-area: side;
+        background-color: chocolate;
+      }
+
+      main {
+        grid-area: content;
+      }
+
+      footer {
+        grid-area: foot;
+        background-color: darkturquoise;
+      }
+
+      .flex-center {
+        /* make parent container flex */
+        display: flex;
+        /* center vertiacally */
+        align-items: center;
+        /* center gorizonatally */
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>page header 💀</header>
+    <aside>aside 🚥</aside>
+    <main class="flex-center">
+      <img src="http://placekitten.com/400/400" alt="cute little creature" />
+    </main>
+    <footer>footer 🦶</footer>
+  </body>
+</html>
